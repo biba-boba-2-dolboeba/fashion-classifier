@@ -31,7 +31,7 @@ def load_img(imgpath):
 
 
 
-load_img('op7.jpeg')
+load_img('pathToimg')
 
 
 
