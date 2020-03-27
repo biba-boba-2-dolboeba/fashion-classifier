@@ -22,20 +22,16 @@ class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat',
 #метод переводит в негатив переданное изображение
 def load_img(imgpath):
     img = cv2.imread(imgpath, 0)
-    plt.imshow(img, cmap=plt.cm.binary)
-    plt.xticks([])
-    plt.yticks([])
-    plt.savefig("present_classification_img.png",  bbox_inches='tight')
-    plt.show()
+    negative_img = 225 - img
+    cv2.imwrite("negative image.bmp", negative_img)
 
 
 
-
-load_img('op7.jpeg')
-
+load_img('op.jpg')
 
 
-image = keras.preprocessing.image.load_img('present_classification_img.png',
+
+image = keras.preprocessing.image.load_img('present_classification_img_2.png',
                                            color_mode='grayscale',
                                            target_size=(28,28),
                                            interpolation='box')
